@@ -1,0 +1,10 @@
+Para executar este projecto, é necessário iniciar o servidor PHP na porta 8000 na pasta que antecede a pasta do projecto
+
+Passo 1: Identifique o caminho do projecto
+    Caminho do projecto (ex): c:\meus-projectos\projecto-vagas\
+
+Passo 2: Inicialização do servior PHP - abrir o terminal na pasta dos projectos
+    No terminal: c:\meus-projectos\$ php -S localhost:8000
+
+Passo 3: Acessar o projecto pelo navegador
+    No navegador, digite: http://localhost:8000/projecto-vagas
