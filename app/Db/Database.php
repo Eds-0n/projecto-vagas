@@ -4,7 +4,10 @@ namespace App\Db;
 
 use \PDO;
 use \PDOException;
-\App\Common\Environment::load(__DIR__);
+use \App\Common\Environment;
+
+// CARREGA AS VARIÁVEIS DE AMBIENTE DO PROJECTO
+Environment::load(__DIR__);
 
 class Database
 {
