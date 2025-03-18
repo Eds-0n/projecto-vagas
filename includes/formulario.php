@@ -12,24 +12,12 @@
 
         <div class="form-group">
             <label>Título</label>
-            <input type="text" class="form-control" name="titulo" value="<?php
-                                                                            if (isset($obVaga->titulo)) {
-                                                                                echo $obVaga->titulo;
-                                                                            } else {
-                                                                                echo '';
-                                                                            }
-                                                                            ?>">
+            <input type="text" class="form-control" name="titulo" value="<?= isset($obVaga->titulo) ? $obVaga->titulo : '' ?>">
         </div>
 
         <div class="form-group">
             <label>Descrição</label>
-            <textarea name="descricao" class="form-control" rows="5"><?php
-                                                                        if (isset($obVaga->descricao)) {
-                                                                            echo $obVaga->descricao;
-                                                                        } else {
-                                                                            echo '';
-                                                                        }
-                                                                        ?></textarea>
+            <textarea name="descricao" class="form-control" rows="5"><?= isset($obVaga->descricao) ? $obVaga->descricao : '' ?></textarea>
         </div>
 
         <div class="form-group">
@@ -38,7 +26,7 @@
 
                 <div class="form-check form-check-inline">
                     <label class="form-control">
-                        <input type="radio" name="activo" value="s" checked> Activo
+                        <input type="radio" name="activo" value="s" checked> Activa
                     </label>
                 </div>
 
@@ -46,11 +34,11 @@
                     <label class="form-control">
                         <input type="radio" name="activo" value="n" <?php
                                                                     if (isset($obVaga->activo)) {
-                                                                        echo $obVaga->activo == 'n' ? 'checked' : ''; 
+                                                                        echo $obVaga->activo == 'n' ? 'checked' : '';
                                                                     } else {
                                                                         echo '';
                                                                     }
-                                                                    ?>> Inactivo
+                                                                    ?>> Inactiva
                     </label>
                 </div>
 

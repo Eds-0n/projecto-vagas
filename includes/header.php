@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- BOOTSTRAP CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="http://localhost:8000/projecto-vagas/includes/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://localhost:8000/projecto-vagas/includes/dist/css/style.css">
     <title>Portal de Vagas</title>
@@ -17,5 +17,5 @@
 
         <div class="jumbotron bg-danger p-5  border-r-5">
             <h1>Portal de Vagas</h1>
-            <p>Exemplo de CRUD com PHP Orientado a Objectos</p>
+            <p>Explore vagas de emprego que vão de acordo com o seu objectivo.</p>
         </div>

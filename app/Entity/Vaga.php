@@ -78,7 +78,8 @@ class Vaga
      * Método responsável por exclior uma vaga do banco
      * @return boolean
      */
-    public function excluir() {
+    public function excluir()
+    {
         return (new Database('vagas'))->delete('id = ' . $this->id);
     }
 
@@ -87,12 +88,21 @@ class Vaga
      * @param string $where
      * @param string $order
      * @param string $limit
-     * @return aray
+     * @return array
      */
     public static function getVagas($where = null, $order = null, $limit = null)
     {
-
         return (new Database('vagas'))->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+    }
+
+    /**
+     * Método responável por obter a quantidade de vagas do banco de dados
+     * @param string $where
+     * @return integer
+     */
+    public static function getQuantidadeVagas($where = null)
+    {
+        return (new Database('vagas'))->select($where, null, null, 'COUNT(*) as qtd')->fetchObject()->qtd;
     }
 
     /**
