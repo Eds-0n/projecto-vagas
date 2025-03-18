@@ -29,7 +29,6 @@ $quantidadeVagas = Vaga::getQuantidadeVagas($where);
 
 // PAGINAÇÃO
 $obPagination = new Pagination($quantidadeVagas, $_GET['pagina'] ?? 1, 5);
-// echo '<pre>'; print_r($obPagination->getLimit()); echo '</pre>'; exit;
 
 // OBTEM AS VAGAS   
 $vagas = Vaga::getVagas($where, null, $obPagination->getLimit());

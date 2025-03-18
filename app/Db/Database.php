@@ -4,6 +4,7 @@ namespace App\Db;
 
 use \PDO;
 use \PDOException;
+\App\Common\Environment::load(__DIR__);
 
 class Database
 {
@@ -11,25 +12,25 @@ class Database
      * Host de conexão com o banco de dados
      * @var string
      */
-    const HOST = 'localhost';
+    private $host;
 
     /**
      * Nome do banco de dados
      * @var string
      */
-    const NAME = 'projecto_vagas';
+    private $name;
 
     /**
      * Usuário do banco
      * @var string
      */
-    const USER = 'root';
+    private $user;
 
     /**
      * Senha de acesso ao banco de dados
      * @var string
      */
-    const PASS = '';
+    private $pass;
 
     /**
      * Nome da tabela a ser manipulada
@@ -59,7 +60,12 @@ class Database
     private function setConnection()
     {
         try {
-            $this->connection = new PDO('mysql:host=' . self::HOST . ';dbname=' . self::NAME, self::USER, self::PASS);
+            $this->host = getenv('DB_HOST');
+            $this->name = getenv('DB_NAME');
+            $this->user = getenv('DB_USER');
+            $this->pass = getenv('DB_PASS');
+
+            $this->connection = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->name, $this->user, $this->pass);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("ERROR: " . $e->getMessage());
